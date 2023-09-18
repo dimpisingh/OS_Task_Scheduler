@@ -1,0 +1,12 @@
+root@vm-linux:~# ./rsdl_test 10 80000
+<pid: 341, sched_class: 7, nice: -20>
+<pid: 350, sched_class: 7, nice: -16, do_calc(80000): 2105032704, time: 93.00>
+<pid: 351, sched_class: 7, nice: -14, do_calc(80000): 2105032704, time: 94.00>
+<pid: 348, sched_class: 7, nice: -11, do_calc(80000): 2105032704, time: 95.00>
+<pid: 347, sched_class: 7, nice: -18, do_calc(80000): 2105032704, time: 98.00>
+<pid: 345, sched_class: 7, nice:  -4, do_calc(80000): 2105032704, time: 107.00>
+<pid: 343, sched_class: 7, nice:   4, do_calc(80000): 2105032704, time: 109.00>
+<pid: 346, sched_class: 7, nice:   2, do_calc(80000): 2105032704, time: 114.00>
+<pid: 344, sched_class: 7, nice:   8, do_calc(80000): 2105032704, time: 119.00>
+<pid: 342, sched_class: 7, nice:  10, do_calc(80000): 2105032704, time: 121.00>
+<pid: 349, sched_class: 7, nice:  13, do_calc(80000): 2105032704, time: 125.00>

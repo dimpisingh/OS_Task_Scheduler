@@ -1,0 +1,1054 @@
+root@vm-linux:~# ./rsdl_test 10 100
+<pid: 296, sched_class: 7, nice: -20>
+<pid: 297, sched_class: 7, nice: -14, do_calc(100): 10000, time:  0.00>
+<pid: 298, sched_class: 7, nice:   6, do_calc(100): 10000, time:  0.00>
+<pid: 299, sched_class: 7, nice:   4, do_calc(100): 10000, time:  0.00>
+<pid: 300, sched_class: 7, nice:   8, do_calc(100): 10000, time:  0.00>
+<pid: 301, sched_class: 7, nice: -16, do_calc(100): 10000, time:  0.00>
+<pid: 302, sched_class: 7, nice: -17, do_calc(100): 10000, time:  0.00>
+<pid: 303, sched_class: 7, nice:   1, do_calc(100): 10000, time:  0.00>
+<pid: 304, sched_class: 7, nice:  -7, do_calc(100): 10000, time:  0.00>
+<pid: 305, sched_class: 7, nice:   5, do_calc(100): 10000, time:  0.00>
+<pid: 306, sched_class: 7, nice:  -5, do_calc(100): 10000, time:  0.00>
+root@vm-linux:~# dmesg   
+[  161.662281] RSDL:             => No more tasks to run
+[  161.662294] RSDL:             => Restarting epoch
+[  161.662330] RSDL: HOOK CALLED => enqueue_task(pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662337] RSDL:             => Incrementing nr_running.
+[  161.662338] RSDL:             => Flag set -> ENQUEUE_RESTORE
+[  161.662341] RSDL: ===============================================================================
+[  161.662342] RSDL: = RUNQUEUE <cpu: 0, nr_running: 1, current_list: 0>
+[  161.662343] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662345] RSDL: -------------------------------------------------------------------------------
+[  161.662345] RSDL: = ACTIVE RQs
+[  161.662346] RSDL: = RQ  0 <quota: 20>
+[  161.662347] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662349] RSDL: -------------------------------------------------------------------------------
+[  161.662350] RSDL: = EXPIRED RQs
+[  161.662350] RSDL: ===============================================================================
+[  161.662351] RSDL: HOOK CALLED => set_next_task(pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662353] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.662354] RSDL:             => picked task (pid: 296, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662355] RSDL: ===============================================================================
+[  161.662356] RSDL: = RUNQUEUE <cpu: 0, nr_running: 1, current_list: 0>
+[  161.662357] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662358] RSDL: -------------------------------------------------------------------------------
+[  161.662359] RSDL: = ACTIVE RQs
+[  161.662359] RSDL: -------------------------------------------------------------------------------
+[  161.662360] RSDL: = EXPIRED RQs
+[  161.662360] RSDL: ===============================================================================
+[  161.662361] RSDL: ===============================================================================
+[  161.662362] RSDL: = RUNQUEUE <cpu: 0, nr_running: 1, current_list: 0>
+[  161.662363] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662364] RSDL: -------------------------------------------------------------------------------
+[  161.662364] RSDL: = ACTIVE RQs
+[  161.662365] RSDL: -------------------------------------------------------------------------------
+[  161.662366] RSDL: = EXPIRED RQs
+[  161.662366] RSDL: ===============================================================================
+[  161.662367] RSDL: HOOK CALLED => switched_to(pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662558] RSDL: HOOK CALLED => task_fork(pid: 297, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.662565] RSDL: HOOK CALLED => enqueue_task(pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662567] RSDL:             => Incrementing nr_running.
+[  161.662568] RSDL: ===============================================================================
+[  161.662569] RSDL: = RUNQUEUE <cpu: 0, nr_running: 2, current_list: 0>
+[  161.662583] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662584] RSDL: -------------------------------------------------------------------------------
+[  161.662585] RSDL: = ACTIVE RQs
+[  161.662585] RSDL: = RQ  0 <quota: 20>
+[  161.662586] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662588] RSDL: -------------------------------------------------------------------------------
+[  161.662588] RSDL: = EXPIRED RQs
+[  161.662589] RSDL: ===============================================================================
+[  161.662590] RSDL: HOOK CALLED => check_preempt_curr(pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662591] RSDL: HOOK CALLED => smp_task_woken(pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662593] RSDL: ===============================================================================
+[  161.662593] RSDL: = RUNQUEUE <cpu: 0, nr_running: 2, current_list: 0>
+[  161.662594] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662604] RSDL: -------------------------------------------------------------------------------
+[  161.662605] RSDL: = ACTIVE RQs
+[  161.662606] RSDL: = RQ  0 <quota: 20>
+[  161.662607] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662611] RSDL: -------------------------------------------------------------------------------
+[  161.662612] RSDL: = EXPIRED RQs
+[  161.662612] RSDL: ===============================================================================
+[  161.662741] RSDL: HOOK CALLED => task_fork(pid: 298, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.662747] RSDL: HOOK CALLED => enqueue_task(pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662749] RSDL:             => Incrementing nr_running.
+[  161.662750] RSDL: ===============================================================================
+[  161.662750] RSDL: = RUNQUEUE <cpu: 0, nr_running: 3, current_list: 0>
+[  161.662751] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662752] RSDL: -------------------------------------------------------------------------------
+[  161.662753] RSDL: = ACTIVE RQs
+[  161.662754] RSDL: = RQ  0 <quota: 20>
+[  161.662755] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662756] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662758] RSDL: -------------------------------------------------------------------------------
+[  161.662759] RSDL: = EXPIRED RQs
+[  161.662760] RSDL: ===============================================================================
+[  161.662760] RSDL: HOOK CALLED => check_preempt_curr(pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662762] RSDL: HOOK CALLED => smp_task_woken(pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662763] RSDL: ===============================================================================
+[  161.662764] RSDL: = RUNQUEUE <cpu: 0, nr_running: 3, current_list: 0>
+[  161.662765] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662766] RSDL: -------------------------------------------------------------------------------
+[  161.662767] RSDL: = ACTIVE RQs
+[  161.662768] RSDL: = RQ  0 <quota: 20>
+[  161.662769] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662771] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662773] RSDL: -------------------------------------------------------------------------------
+[  161.662773] RSDL: = EXPIRED RQs
+[  161.662774] RSDL: ===============================================================================
+[  161.662941] RSDL: HOOK CALLED => task_fork(pid: 299, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.662946] RSDL: HOOK CALLED => enqueue_task(pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662947] RSDL:             => Incrementing nr_running.
+[  161.662948] RSDL: ===============================================================================
+[  161.662948] RSDL: = RUNQUEUE <cpu: 0, nr_running: 4, current_list: 0>
+[  161.662949] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662950] RSDL: -------------------------------------------------------------------------------
+[  161.662951] RSDL: = ACTIVE RQs
+[  161.662951] RSDL: = RQ  0 <quota: 20>
+[  161.662952] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662953] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662955] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662956] RSDL: -------------------------------------------------------------------------------
+[  161.662957] RSDL: = EXPIRED RQs
+[  161.662957] RSDL: ===============================================================================
+[  161.662958] RSDL: HOOK CALLED => check_preempt_curr(pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662959] RSDL: HOOK CALLED => smp_task_woken(pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662961] RSDL: ===============================================================================
+[  161.662961] RSDL: = RUNQUEUE <cpu: 0, nr_running: 4, current_list: 0>
+[  161.662962] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.662967] RSDL: -------------------------------------------------------------------------------
+[  161.662967] RSDL: = ACTIVE RQs
+[  161.662968] RSDL: = RQ  0 <quota: 20>
+[  161.662968] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662970] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662971] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.662972] RSDL: -------------------------------------------------------------------------------
+[  161.662973] RSDL: = EXPIRED RQs
+[  161.662973] RSDL: ===============================================================================
+[  161.663886] RSDL: HOOK CALLED => task_tick(pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.663997] RSDL: HOOK CALLED => task_tick(pid: 296, nice: -20, prio: 0, quota: 4, running: 1, on_rq: 0)
+[  161.664064] RSDL: HOOK CALLED => task_fork(pid: 300, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.664069] RSDL: HOOK CALLED => enqueue_task(pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.664071] RSDL:             => Incrementing nr_running.
+[  161.664072] RSDL: ===============================================================================
+[  161.664073] RSDL: = RUNQUEUE <cpu: 0, nr_running: 5, current_list: 0>
+[  161.664074] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664075] RSDL: -------------------------------------------------------------------------------
+[  161.664076] RSDL: = ACTIVE RQs
+[  161.664077] RSDL: = RQ  0 <quota: 18>
+[  161.664078] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664080] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664081] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664082] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664084] RSDL: -------------------------------------------------------------------------------
+[  161.664084] RSDL: = EXPIRED RQs
+[  161.664098] RSDL: ===============================================================================
+[  161.664098] RSDL: HOOK CALLED => check_preempt_curr(pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664100] RSDL: HOOK CALLED => smp_task_woken(pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664102] RSDL: ===============================================================================
+[  161.664102] RSDL: = RUNQUEUE <cpu: 0, nr_running: 5, current_list: 0>
+[  161.664103] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664104] RSDL: -------------------------------------------------------------------------------
+[  161.664105] RSDL: = ACTIVE RQs
+[  161.664106] RSDL: = RQ  0 <quota: 18>
+[  161.664106] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664108] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664109] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664110] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664111] RSDL: -------------------------------------------------------------------------------
+[  161.664112] RSDL: = EXPIRED RQs
+[  161.664112] RSDL: ===============================================================================
+[  161.664202] RSDL: HOOK CALLED => task_fork(pid: 301, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.664206] RSDL: HOOK CALLED => enqueue_task(pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.664208] RSDL:             => Incrementing nr_running.
+[  161.664208] RSDL: ===============================================================================
+[  161.664209] RSDL: = RUNQUEUE <cpu: 0, nr_running: 6, current_list: 0>
+[  161.664210] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664211] RSDL: -------------------------------------------------------------------------------
+[  161.664212] RSDL: = ACTIVE RQs
+[  161.664212] RSDL: = RQ  0 <quota: 18>
+[  161.664217] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664218] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664219] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664220] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664222] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664223] RSDL: -------------------------------------------------------------------------------
+[  161.664223] RSDL: = EXPIRED RQs
+[  161.664224] RSDL: ===============================================================================
+[  161.664225] RSDL: HOOK CALLED => check_preempt_curr(pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664226] RSDL: HOOK CALLED => smp_task_woken(pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664228] RSDL: ===============================================================================
+[  161.664228] RSDL: = RUNQUEUE <cpu: 0, nr_running: 6, current_list: 0>
+[  161.664229] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664230] RSDL: -------------------------------------------------------------------------------
+[  161.664231] RSDL: = ACTIVE RQs
+[  161.664231] RSDL: = RQ  0 <quota: 18>
+[  161.664232] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664233] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664234] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664236] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664237] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664238] RSDL: -------------------------------------------------------------------------------
+[  161.664249] RSDL: = EXPIRED RQs
+[  161.664250] RSDL: ===============================================================================
+[  161.664425] RSDL: HOOK CALLED => task_fork(pid: 302, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.664429] RSDL: HOOK CALLED => enqueue_task(pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.664430] RSDL:             => Incrementing nr_running.
+[  161.664431] RSDL: ===============================================================================
+[  161.664431] RSDL: = RUNQUEUE <cpu: 0, nr_running: 7, current_list: 0>
+[  161.664432] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664434] RSDL: -------------------------------------------------------------------------------
+[  161.664434] RSDL: = ACTIVE RQs
+[  161.664435] RSDL: = RQ  0 <quota: 18>
+[  161.664435] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664437] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664438] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664439] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664440] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664442] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664443] RSDL: -------------------------------------------------------------------------------
+[  161.664444] RSDL: = EXPIRED RQs
+[  161.664444] RSDL: ===============================================================================
+[  161.664445] RSDL: HOOK CALLED => check_preempt_curr(pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664446] RSDL: HOOK CALLED => smp_task_woken(pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664448] RSDL: ===============================================================================
+[  161.664448] RSDL: = RUNQUEUE <cpu: 0, nr_running: 7, current_list: 0>
+[  161.664449] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664450] RSDL: -------------------------------------------------------------------------------
+[  161.664451] RSDL: = ACTIVE RQs
+[  161.664452] RSDL: = RQ  0 <quota: 18>
+[  161.664456] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664457] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664458] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664459] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664460] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664462] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664463] RSDL: -------------------------------------------------------------------------------
+[  161.664463] RSDL: = EXPIRED RQs
+[  161.664464] RSDL: ===============================================================================
+[  161.664664] RSDL: HOOK CALLED => task_fork(pid: 303, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.664667] RSDL: HOOK CALLED => enqueue_task(pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.664669] RSDL:             => Incrementing nr_running.
+[  161.664670] RSDL: ===============================================================================
+[  161.664670] RSDL: = RUNQUEUE <cpu: 0, nr_running: 8, current_list: 0>
+[  161.664671] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664676] RSDL: -------------------------------------------------------------------------------
+[  161.664691] RSDL: = ACTIVE RQs
+[  161.664692] RSDL: = RQ  0 <quota: 18>
+[  161.664702] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664704] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664705] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664706] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664707] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664708] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664710] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664711] RSDL: -------------------------------------------------------------------------------
+[  161.664712] RSDL: = EXPIRED RQs
+[  161.664712] RSDL: ===============================================================================
+[  161.664713] RSDL: HOOK CALLED => check_preempt_curr(pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664714] RSDL: HOOK CALLED => smp_task_woken(pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664716] RSDL: ===============================================================================
+[  161.664716] RSDL: = RUNQUEUE <cpu: 0, nr_running: 8, current_list: 0>
+[  161.664717] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664718] RSDL: -------------------------------------------------------------------------------
+[  161.664719] RSDL: = ACTIVE RQs
+[  161.664720] RSDL: = RQ  0 <quota: 18>
+[  161.664720] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664722] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664723] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664724] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664725] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664726] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664727] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664728] RSDL: -------------------------------------------------------------------------------
+[  161.664729] RSDL: = EXPIRED RQs
+[  161.664730] RSDL: ===============================================================================
+[  161.664840] RSDL: HOOK CALLED => task_fork(pid: 304, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.664844] RSDL: HOOK CALLED => enqueue_task(pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.664845] RSDL:             => Incrementing nr_running.
+[  161.664846] RSDL: ===============================================================================
+[  161.664849] RSDL: = RUNQUEUE <cpu: 0, nr_running: 9, current_list: 0>
+[  161.664850] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664851] RSDL: -------------------------------------------------------------------------------
+[  161.664852] RSDL: = ACTIVE RQs
+[  161.664853] RSDL: = RQ  0 <quota: 18>
+[  161.664853] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664855] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664856] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664857] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664858] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664859] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664861] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664862] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664863] RSDL: -------------------------------------------------------------------------------
+[  161.664864] RSDL: = EXPIRED RQs
+[  161.664874] RSDL: ===============================================================================
+[  161.664875] RSDL: HOOK CALLED => check_preempt_curr(pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664876] RSDL: HOOK CALLED => smp_task_woken(pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664878] RSDL: ===============================================================================
+[  161.664878] RSDL: = RUNQUEUE <cpu: 0, nr_running: 9, current_list: 0>
+[  161.664879] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.664880] RSDL: -------------------------------------------------------------------------------
+[  161.664881] RSDL: = ACTIVE RQs
+[  161.664881] RSDL: = RQ  0 <quota: 18>
+[  161.664882] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664883] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664884] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664886] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664887] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664888] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664889] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664890] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.664892] RSDL: -------------------------------------------------------------------------------
+[  161.664892] RSDL: = EXPIRED RQs
+[  161.664893] RSDL: ===============================================================================
+[  161.664999] RSDL: HOOK CALLED => task_tick(pid: 296, nice: -20, prio: 0, quota: 3, running: 1, on_rq: 0)
+[  161.665036] RSDL: HOOK CALLED => task_fork(pid: 305, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.665039] RSDL: HOOK CALLED => enqueue_task(pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.665040] RSDL:             => Incrementing nr_running.
+[  161.665041] RSDL: ===============================================================================
+[  161.665042] RSDL: = RUNQUEUE <cpu: 0, nr_running: 10, current_list: 0>
+[  161.665043] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 2, running: 1, on_rq: 0)
+[  161.665044] RSDL: -------------------------------------------------------------------------------
+[  161.665045] RSDL: = ACTIVE RQs
+[  161.665045] RSDL: = RQ  0 <quota: 17>
+[  161.665046] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665047] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665048] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665049] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665051] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665056] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665057] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665058] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665059] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665060] RSDL: -------------------------------------------------------------------------------
+[  161.665061] RSDL: = EXPIRED RQs
+[  161.665062] RSDL: ===============================================================================
+[  161.665063] RSDL: HOOK CALLED => check_preempt_curr(pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665064] RSDL: HOOK CALLED => smp_task_woken(pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665065] RSDL: ===============================================================================
+[  161.665066] RSDL: = RUNQUEUE <cpu: 0, nr_running: 10, current_list: 0>
+[  161.665067] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 2, running: 1, on_rq: 0)
+[  161.665080] RSDL: -------------------------------------------------------------------------------
+[  161.665081] RSDL: = ACTIVE RQs
+[  161.665081] RSDL: = RQ  0 <quota: 17>
+[  161.665082] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665083] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665084] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665086] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665087] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665088] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665089] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665090] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665091] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665092] RSDL: -------------------------------------------------------------------------------
+[  161.665093] RSDL: = EXPIRED RQs
+[  161.665094] RSDL: ===============================================================================
+[  161.665163] RSDL: HOOK CALLED => task_fork(pid: 306, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.665167] RSDL: HOOK CALLED => enqueue_task(pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.665168] RSDL:             => Incrementing nr_running.
+[  161.665169] RSDL: ===============================================================================
+[  161.665170] RSDL: = RUNQUEUE <cpu: 0, nr_running: 11, current_list: 0>
+[  161.665171] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 2, running: 1, on_rq: 0)
+[  161.665172] RSDL: -------------------------------------------------------------------------------
+[  161.665172] RSDL: = ACTIVE RQs
+[  161.665173] RSDL: = RQ  0 <quota: 17>
+[  161.665174] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665175] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665176] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665177] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665179] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665180] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665181] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665182] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665183] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665184] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665186] RSDL: -------------------------------------------------------------------------------
+[  161.665186] RSDL: = EXPIRED RQs
+[  161.665187] RSDL: ===============================================================================
+[  161.665191] RSDL: HOOK CALLED => check_preempt_curr(pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665192] RSDL: HOOK CALLED => smp_task_woken(pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665194] RSDL: ===============================================================================
+[  161.665194] RSDL: = RUNQUEUE <cpu: 0, nr_running: 11, current_list: 0>
+[  161.665195] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 2, running: 1, on_rq: 0)
+[  161.665196] RSDL: -------------------------------------------------------------------------------
+[  161.665197] RSDL: = ACTIVE RQs
+[  161.665197] RSDL: = RQ  0 <quota: 17>
+[  161.665198] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665209] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665211] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665212] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665213] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665214] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665215] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665216] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665217] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665219] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665220] RSDL: -------------------------------------------------------------------------------
+[  161.665220] RSDL: = EXPIRED RQs
+[  161.665221] RSDL: ===============================================================================
+[  161.665249] RSDL: HOOK CALLED => dequeue_task(pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665251] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.665252] RSDL: ===============================================================================
+[  161.665252] RSDL: = RUNQUEUE <cpu: 0, nr_running: 11, current_list: 0>
+[  161.665253] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665254] RSDL: -------------------------------------------------------------------------------
+[  161.665255] RSDL: = ACTIVE RQs
+[  161.665255] RSDL: = RQ  0 <quota: 17>
+[  161.665256] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665257] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665258] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665260] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665261] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665262] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665263] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665264] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665276] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665277] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665278] RSDL: -------------------------------------------------------------------------------
+[  161.665279] RSDL: = EXPIRED RQs
+[  161.665279] RSDL: ===============================================================================
+[  161.665280] RSDL: HOOK CALLED => smp_balance(pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665282] RSDL: HOOK CALLED => put_prev_task(pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665284] RSDL:             => Flag set: DEQUEUE_SLEEP
+[  161.665284] RSDL:             => Decrementing nr_running
+[  161.665285] RSDL: ===============================================================================
+[  161.665286] RSDL: = RUNQUEUE <cpu: 0, nr_running: 10, current_list: 0>
+[  161.665287] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665290] RSDL: -------------------------------------------------------------------------------
+[  161.665291] RSDL: = ACTIVE RQs
+[  161.665291] RSDL: = RQ  0 <quota: 17>
+[  161.665292] RSDL: =	-> (pid: 297, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665293] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665294] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665296] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665306] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665308] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665309] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665310] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665311] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665312] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665313] RSDL: -------------------------------------------------------------------------------
+[  161.665314] RSDL: = EXPIRED RQs
+[  161.665314] RSDL: ===============================================================================
+[  161.665316] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.665317] RSDL:             => picked task (pid: 297, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.665318] RSDL: ===============================================================================
+[  161.665319] RSDL: = RUNQUEUE <cpu: 0, nr_running: 10, current_list: 0>
+[  161.665320] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665321] RSDL: -------------------------------------------------------------------------------
+[  161.665322] RSDL: = ACTIVE RQs
+[  161.665322] RSDL: = RQ  0 <quota: 17>
+[  161.665323] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665324] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665325] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665326] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665327] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665329] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665330] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665331] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665332] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665333] RSDL: -------------------------------------------------------------------------------
+[  161.665334] RSDL: = EXPIRED RQs
+[  161.665334] RSDL: ===============================================================================
+[  161.665545] RSDL: HOOK CALLED => enqueue_task(pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665548] RSDL:             => Return from enqueue_task(): Task not running.
+[  161.665549] RSDL: HOOK CALLED => check_preempt_curr(pid: 296, nice: -20, prio: 0, quota: 2, running: 0, on_rq: 0)
+[  161.665550] RSDL: HOOK CALLED => smp_task_woken(pid: 296, nice: -20, prio: 0, quota: 2, running: 1, on_rq: 0)
+[  161.665551] RSDL: HOOK CALLED => enqueue_task(pid: 296, nice: -20, prio: 0, quota: 2, running: 1, on_rq: 0)
+[  161.665553] RSDL:             => Incrementing nr_running.
+[  161.665554] RSDL: ===============================================================================
+[  161.665554] RSDL: = RUNQUEUE <cpu: 0, nr_running: 11, current_list: 0>
+[  161.665555] RSDL: = CURRENT TASK: (pid: 297, nice: -14, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.665556] RSDL: -------------------------------------------------------------------------------
+[  161.665557] RSDL: = ACTIVE RQs
+[  161.665557] RSDL: = RQ  0 <quota: 17>
+[  161.665558] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665559] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665560] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665566] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665568] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665581] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665582] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665584] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665585] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665586] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665587] RSDL: -------------------------------------------------------------------------------
+[  161.665588] RSDL: = EXPIRED RQs
+[  161.665588] RSDL: ===============================================================================
+[  161.665589] RSDL: ===============================================================================
+[  161.665590] RSDL: = RUNQUEUE <cpu: 0, nr_running: 11, current_list: 0>
+[  161.665591] RSDL: = CURRENT TASK: (pid: 297, nice: -14, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.665592] RSDL: -------------------------------------------------------------------------------
+[  161.665592] RSDL: = ACTIVE RQs
+[  161.665593] RSDL: = RQ  0 <quota: 17>
+[  161.665594] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665595] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665596] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665597] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665598] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665599] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665601] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665602] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665603] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665604] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665605] RSDL: -------------------------------------------------------------------------------
+[  161.665606] RSDL: = EXPIRED RQs
+[  161.665606] RSDL: ===============================================================================
+[  161.665611] RSDL: HOOK CALLED => dequeue_task(pid: 297, nice: -14, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.665612] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.665613] RSDL: ===============================================================================
+[  161.665614] RSDL: = RUNQUEUE <cpu: 0, nr_running: 11, current_list: 0>
+[  161.665614] RSDL: = CURRENT TASK: (pid: 297, nice: -14, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.665616] RSDL: -------------------------------------------------------------------------------
+[  161.665616] RSDL: = ACTIVE RQs
+[  161.665617] RSDL: = RQ  0 <quota: 17>
+[  161.665617] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665619] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665620] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665621] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665622] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665623] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665624] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665625] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665627] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665628] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665629] RSDL: -------------------------------------------------------------------------------
+[  161.665630] RSDL: = EXPIRED RQs
+[  161.665641] RSDL: ===============================================================================
+[  161.665644] RSDL: HOOK CALLED => smp_balance(pid: 297, nice: -14, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.665646] RSDL:             => Task prio changed
+[  161.665646] RSDL: HOOK CALLED => put_prev_task(pid: 297, nice: -14, prio: 6, quota: 5, running: 0, on_rq: 0)
+[  161.665648] RSDL:             => Flag set: TASK_DEAD
+[  161.665648] RSDL:             => Decrementing nr_running
+[  161.665649] RSDL: ===============================================================================
+[  161.665650] RSDL: = RUNQUEUE <cpu: 0, nr_running: 10, current_list: 0>
+[  161.665651] RSDL: = CURRENT TASK: (pid: 297, nice: -14, prio: 6, quota: 5, running: 0, on_rq: 0)
+[  161.665652] RSDL: -------------------------------------------------------------------------------
+[  161.665653] RSDL: = ACTIVE RQs
+[  161.665653] RSDL: = RQ  0 <quota: 17>
+[  161.665654] RSDL: =	-> (pid: 298, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665655] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665656] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665657] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665658] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665659] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665661] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665662] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665663] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665664] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665665] RSDL: -------------------------------------------------------------------------------
+[  161.665666] RSDL: = EXPIRED RQs
+[  161.665666] RSDL: ===============================================================================
+[  161.665667] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.665668] RSDL:             => picked task (pid: 298, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.665669] RSDL: ===============================================================================
+[  161.665670] RSDL: = RUNQUEUE <cpu: 0, nr_running: 10, current_list: 0>
+[  161.665671] RSDL: = CURRENT TASK: (pid: 297, nice: -14, prio: 6, quota: 5, running: 0, on_rq: 0)
+[  161.665672] RSDL: -------------------------------------------------------------------------------
+[  161.665673] RSDL: = ACTIVE RQs
+[  161.665673] RSDL: = RQ  0 <quota: 17>
+[  161.665674] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665675] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665676] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665677] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665678] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665680] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665681] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665682] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665683] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.665684] RSDL: -------------------------------------------------------------------------------
+[  161.665685] RSDL: = EXPIRED RQs
+[  161.665685] RSDL: ===============================================================================
+[  161.665689] RSDL: HOOK CALLED => task_dead(pid: 297, nice: -14, prio: 6, quota: 5, running: 0, on_rq: 0)
+[  161.666001] RSDL: HOOK CALLED => task_tick(pid: 298, nice: 6, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.666067] RSDL: HOOK CALLED => dequeue_task(pid: 298, nice: 6, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.666070] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.666070] RSDL: ===============================================================================
+[  161.666071] RSDL: = RUNQUEUE <cpu: 0, nr_running: 10, current_list: 0>
+[  161.666076] RSDL: = CURRENT TASK: (pid: 298, nice: 6, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.666077] RSDL: -------------------------------------------------------------------------------
+[  161.666078] RSDL: = ACTIVE RQs
+[  161.666078] RSDL: = RQ  0 <quota: 16>
+[  161.666079] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666081] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666082] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666083] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666097] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666098] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666099] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666100] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666101] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666103] RSDL: -------------------------------------------------------------------------------
+[  161.666103] RSDL: = EXPIRED RQs
+[  161.666104] RSDL: ===============================================================================
+[  161.666105] RSDL: HOOK CALLED => smp_balance(pid: 298, nice: 6, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.666106] RSDL:             => Task prio changed
+[  161.666107] RSDL: HOOK CALLED => put_prev_task(pid: 298, nice: 6, prio: 26, quota: 4, running: 0, on_rq: 0)
+[  161.666108] RSDL:             => Flag set: TASK_DEAD
+[  161.666109] RSDL:             => Decrementing nr_running
+[  161.666110] RSDL: ===============================================================================
+[  161.666111] RSDL: = RUNQUEUE <cpu: 0, nr_running: 9, current_list: 0>
+[  161.666111] RSDL: = CURRENT TASK: (pid: 298, nice: 6, prio: 26, quota: 4, running: 0, on_rq: 0)
+[  161.666113] RSDL: -------------------------------------------------------------------------------
+[  161.666113] RSDL: = ACTIVE RQs
+[  161.666114] RSDL: = RQ  0 <quota: 16>
+[  161.666114] RSDL: =	-> (pid: 299, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666116] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666117] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666118] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666119] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666120] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666121] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666123] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666124] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666125] RSDL: -------------------------------------------------------------------------------
+[  161.666126] RSDL: = EXPIRED RQs
+[  161.666126] RSDL: ===============================================================================
+[  161.666127] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.666128] RSDL:             => picked task (pid: 299, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.666129] RSDL: ===============================================================================
+[  161.666140] RSDL: = RUNQUEUE <cpu: 0, nr_running: 9, current_list: 0>
+[  161.666141] RSDL: = CURRENT TASK: (pid: 298, nice: 6, prio: 26, quota: 4, running: 0, on_rq: 0)
+[  161.666142] RSDL: -------------------------------------------------------------------------------
+[  161.666143] RSDL: = ACTIVE RQs
+[  161.666144] RSDL: = RQ  0 <quota: 16>
+[  161.666144] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666145] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666147] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666148] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666149] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666153] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666154] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666155] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666156] RSDL: -------------------------------------------------------------------------------
+[  161.666157] RSDL: = EXPIRED RQs
+[  161.666157] RSDL: ===============================================================================
+[  161.666160] RSDL: HOOK CALLED => task_dead(pid: 298, nice: 6, prio: 26, quota: 4, running: 0, on_rq: 0)
+[  161.666622] RSDL: HOOK CALLED => dequeue_task(pid: 299, nice: 4, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.666626] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.666627] RSDL: ===============================================================================
+[  161.666628] RSDL: = RUNQUEUE <cpu: 0, nr_running: 9, current_list: 0>
+[  161.666629] RSDL: = CURRENT TASK: (pid: 299, nice: 4, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.666631] RSDL: -------------------------------------------------------------------------------
+[  161.666632] RSDL: = ACTIVE RQs
+[  161.666632] RSDL: = RQ  0 <quota: 16>
+[  161.666634] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666636] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666637] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666639] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666641] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666644] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666645] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666647] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666650] RSDL: -------------------------------------------------------------------------------
+[  161.666651] RSDL: = EXPIRED RQs
+[  161.666652] RSDL: ===============================================================================
+[  161.666653] RSDL: HOOK CALLED => smp_balance(pid: 299, nice: 4, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.666655] RSDL:             => Task prio changed
+[  161.666657] RSDL: HOOK CALLED => put_prev_task(pid: 299, nice: 4, prio: 24, quota: 5, running: 0, on_rq: 0)
+[  161.666659] RSDL:             => Flag set: TASK_DEAD
+[  161.666660] RSDL:             => Decrementing nr_running
+[  161.666661] RSDL: ===============================================================================
+[  161.666662] RSDL: = RUNQUEUE <cpu: 0, nr_running: 8, current_list: 0>
+[  161.666663] RSDL: = CURRENT TASK: (pid: 299, nice: 4, prio: 24, quota: 5, running: 0, on_rq: 0)
+[  161.666665] RSDL: -------------------------------------------------------------------------------
+[  161.666666] RSDL: = ACTIVE RQs
+[  161.666685] RSDL: = RQ  0 <quota: 16>
+[  161.666687] RSDL: =	-> (pid: 300, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666688] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666690] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666692] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666694] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666696] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666698] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666699] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666701] RSDL: -------------------------------------------------------------------------------
+[  161.666702] RSDL: = EXPIRED RQs
+[  161.666703] RSDL: ===============================================================================
+[  161.666704] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.666705] RSDL:             => picked task (pid: 300, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.666707] RSDL: ===============================================================================
+[  161.666711] RSDL: = RUNQUEUE <cpu: 0, nr_running: 8, current_list: 0>
+[  161.666712] RSDL: = CURRENT TASK: (pid: 299, nice: 4, prio: 24, quota: 5, running: 0, on_rq: 0)
+[  161.666714] RSDL: -------------------------------------------------------------------------------
+[  161.666715] RSDL: = ACTIVE RQs
+[  161.666716] RSDL: = RQ  0 <quota: 16>
+[  161.666717] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666719] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666721] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666722] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666724] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666726] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666728] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.666730] RSDL: -------------------------------------------------------------------------------
+[  161.666731] RSDL: = EXPIRED RQs
+[  161.666732] RSDL: ===============================================================================
+[  161.666736] RSDL: HOOK CALLED => task_dead(pid: 299, nice: 4, prio: 24, quota: 5, running: 0, on_rq: 0)
+[  161.667000] RSDL: HOOK CALLED => task_tick(pid: 300, nice: 8, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.667047] RSDL: HOOK CALLED => dequeue_task(pid: 300, nice: 8, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.667050] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.667051] RSDL: ===============================================================================
+[  161.667052] RSDL: = RUNQUEUE <cpu: 0, nr_running: 8, current_list: 0>
+[  161.667053] RSDL: = CURRENT TASK: (pid: 300, nice: 8, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.667056] RSDL: -------------------------------------------------------------------------------
+[  161.667056] RSDL: = ACTIVE RQs
+[  161.667057] RSDL: = RQ  0 <quota: 15>
+[  161.667058] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667059] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667060] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667062] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667063] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667065] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667066] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667085] RSDL: -------------------------------------------------------------------------------
+[  161.667086] RSDL: = EXPIRED RQs
+[  161.667087] RSDL: ===============================================================================
+[  161.667089] RSDL: HOOK CALLED => smp_balance(pid: 300, nice: 8, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.667091] RSDL:             => Task prio changed
+[  161.667092] RSDL: HOOK CALLED => put_prev_task(pid: 300, nice: 8, prio: 28, quota: 4, running: 0, on_rq: 0)
+[  161.667094] RSDL:             => Flag set: TASK_DEAD
+[  161.667095] RSDL:             => Decrementing nr_running
+[  161.667096] RSDL: ===============================================================================
+[  161.667097] RSDL: = RUNQUEUE <cpu: 0, nr_running: 7, current_list: 0>
+[  161.667098] RSDL: = CURRENT TASK: (pid: 300, nice: 8, prio: 28, quota: 4, running: 0, on_rq: 0)
+[  161.667100] RSDL: -------------------------------------------------------------------------------
+[  161.667101] RSDL: = ACTIVE RQs
+[  161.667102] RSDL: = RQ  0 <quota: 15>
+[  161.667103] RSDL: =	-> (pid: 301, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667105] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667107] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667109] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667111] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667116] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667118] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667120] RSDL: -------------------------------------------------------------------------------
+[  161.667121] RSDL: = EXPIRED RQs
+[  161.667122] RSDL: ===============================================================================
+[  161.667124] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.667126] RSDL:             => picked task (pid: 301, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.667127] RSDL: ===============================================================================
+[  161.667128] RSDL: = RUNQUEUE <cpu: 0, nr_running: 7, current_list: 0>
+[  161.667130] RSDL: = CURRENT TASK: (pid: 300, nice: 8, prio: 28, quota: 4, running: 0, on_rq: 0)
+[  161.667132] RSDL: -------------------------------------------------------------------------------
+[  161.667133] RSDL: = ACTIVE RQs
+[  161.667134] RSDL: = RQ  0 <quota: 15>
+[  161.667135] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667137] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667139] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667141] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667142] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667144] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667146] RSDL: -------------------------------------------------------------------------------
+[  161.667147] RSDL: = EXPIRED RQs
+[  161.667147] RSDL: ===============================================================================
+[  161.667151] RSDL: HOOK CALLED => task_dead(pid: 300, nice: 8, prio: 28, quota: 4, running: 0, on_rq: 0)
+[  161.667478] RSDL: HOOK CALLED => dequeue_task(pid: 301, nice: -16, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.667488] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.667513] RSDL: ===============================================================================
+[  161.667514] RSDL: = RUNQUEUE <cpu: 0, nr_running: 7, current_list: 0>
+[  161.667530] RSDL: = CURRENT TASK: (pid: 301, nice: -16, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.667532] RSDL: -------------------------------------------------------------------------------
+[  161.667533] RSDL: = ACTIVE RQs
+[  161.667534] RSDL: = RQ  0 <quota: 15>
+[  161.667535] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667537] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667539] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667541] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667542] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667543] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667544] RSDL: -------------------------------------------------------------------------------
+[  161.667545] RSDL: = EXPIRED RQs
+[  161.667546] RSDL: ===============================================================================
+[  161.667547] RSDL: HOOK CALLED => smp_balance(pid: 301, nice: -16, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.667550] RSDL:             => Task prio changed
+[  161.667551] RSDL: HOOK CALLED => put_prev_task(pid: 301, nice: -16, prio: 4, quota: 5, running: 0, on_rq: 0)
+[  161.667554] RSDL:             => Flag set: TASK_DEAD
+[  161.667554] RSDL:             => Decrementing nr_running
+[  161.667555] RSDL: ===============================================================================
+[  161.667556] RSDL: = RUNQUEUE <cpu: 0, nr_running: 6, current_list: 0>
+[  161.667558] RSDL: = CURRENT TASK: (pid: 301, nice: -16, prio: 4, quota: 5, running: 0, on_rq: 0)
+[  161.667560] RSDL: -------------------------------------------------------------------------------
+[  161.667561] RSDL: = ACTIVE RQs
+[  161.667562] RSDL: = RQ  0 <quota: 15>
+[  161.667563] RSDL: =	-> (pid: 302, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667569] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667571] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667573] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667575] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667577] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667579] RSDL: -------------------------------------------------------------------------------
+[  161.667579] RSDL: = EXPIRED RQs
+[  161.667581] RSDL: ===============================================================================
+[  161.667582] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.667583] RSDL:             => picked task (pid: 302, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.667585] RSDL: ===============================================================================
+[  161.667586] RSDL: = RUNQUEUE <cpu: 0, nr_running: 6, current_list: 0>
+[  161.667588] RSDL: = CURRENT TASK: (pid: 301, nice: -16, prio: 4, quota: 5, running: 0, on_rq: 0)
+[  161.667589] RSDL: -------------------------------------------------------------------------------
+[  161.667591] RSDL: = ACTIVE RQs
+[  161.667591] RSDL: = RQ  0 <quota: 15>
+[  161.667593] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667594] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667596] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667598] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667600] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667602] RSDL: -------------------------------------------------------------------------------
+[  161.667616] RSDL: = EXPIRED RQs
+[  161.667616] RSDL: ===============================================================================
+[  161.667619] RSDL: HOOK CALLED => task_dead(pid: 301, nice: -16, prio: 4, quota: 5, running: 0, on_rq: 0)
+[  161.667884] RSDL: HOOK CALLED => dequeue_task(pid: 302, nice: -17, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.667887] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.667888] RSDL: ===============================================================================
+[  161.667889] RSDL: = RUNQUEUE <cpu: 0, nr_running: 6, current_list: 0>
+[  161.667891] RSDL: = CURRENT TASK: (pid: 302, nice: -17, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.667892] RSDL: -------------------------------------------------------------------------------
+[  161.667893] RSDL: = ACTIVE RQs
+[  161.667894] RSDL: = RQ  0 <quota: 15>
+[  161.667896] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667898] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667900] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667902] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667904] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667906] RSDL: -------------------------------------------------------------------------------
+[  161.667907] RSDL: = EXPIRED RQs
+[  161.667908] RSDL: ===============================================================================
+[  161.667909] RSDL: HOOK CALLED => smp_balance(pid: 302, nice: -17, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.667912] RSDL:             => Task prio changed
+[  161.667913] RSDL: HOOK CALLED => put_prev_task(pid: 302, nice: -17, prio: 3, quota: 5, running: 0, on_rq: 0)
+[  161.667915] RSDL:             => Flag set: TASK_DEAD
+[  161.667916] RSDL:             => Decrementing nr_running
+[  161.667917] RSDL: ===============================================================================
+[  161.667918] RSDL: = RUNQUEUE <cpu: 0, nr_running: 5, current_list: 0>
+[  161.667920] RSDL: = CURRENT TASK: (pid: 302, nice: -17, prio: 3, quota: 5, running: 0, on_rq: 0)
+[  161.667921] RSDL: -------------------------------------------------------------------------------
+[  161.667928] RSDL: = ACTIVE RQs
+[  161.667929] RSDL: = RQ  0 <quota: 15>
+[  161.667930] RSDL: =	-> (pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667932] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667934] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667936] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667938] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667939] RSDL: -------------------------------------------------------------------------------
+[  161.667940] RSDL: = EXPIRED RQs
+[  161.667941] RSDL: ===============================================================================
+[  161.667943] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.667944] RSDL:             => picked task (pid: 303, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.667946] RSDL: ===============================================================================
+[  161.667947] RSDL: = RUNQUEUE <cpu: 0, nr_running: 5, current_list: 0>
+[  161.667948] RSDL: = CURRENT TASK: (pid: 302, nice: -17, prio: 3, quota: 5, running: 0, on_rq: 0)
+[  161.667950] RSDL: -------------------------------------------------------------------------------
+[  161.667951] RSDL: = ACTIVE RQs
+[  161.667952] RSDL: = RQ  0 <quota: 15>
+[  161.667953] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667970] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667972] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667974] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.667976] RSDL: -------------------------------------------------------------------------------
+[  161.667977] RSDL: = EXPIRED RQs
+[  161.667978] RSDL: ===============================================================================
+[  161.667982] RSDL: HOOK CALLED => task_dead(pid: 302, nice: -17, prio: 3, quota: 5, running: 0, on_rq: 0)
+[  161.668000] RSDL: HOOK CALLED => task_tick(pid: 303, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.668324] RSDL: HOOK CALLED => dequeue_task(pid: 303, nice: 1, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.668328] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.668329] RSDL: ===============================================================================
+[  161.668330] RSDL: = RUNQUEUE <cpu: 0, nr_running: 5, current_list: 0>
+[  161.668332] RSDL: = CURRENT TASK: (pid: 303, nice: 1, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.668334] RSDL: -------------------------------------------------------------------------------
+[  161.668335] RSDL: = ACTIVE RQs
+[  161.668336] RSDL: = RQ  0 <quota: 14>
+[  161.668337] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668339] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668341] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668343] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668345] RSDL: -------------------------------------------------------------------------------
+[  161.668345] RSDL: = EXPIRED RQs
+[  161.668346] RSDL: ===============================================================================
+[  161.668347] RSDL: HOOK CALLED => smp_balance(pid: 303, nice: 1, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.668350] RSDL:             => Task prio changed
+[  161.668351] RSDL: HOOK CALLED => put_prev_task(pid: 303, nice: 1, prio: 21, quota: 4, running: 0, on_rq: 0)
+[  161.668353] RSDL:             => Flag set: TASK_DEAD
+[  161.668354] RSDL:             => Decrementing nr_running
+[  161.668355] RSDL: ===============================================================================
+[  161.668356] RSDL: = RUNQUEUE <cpu: 0, nr_running: 4, current_list: 0>
+[  161.668358] RSDL: = CURRENT TASK: (pid: 303, nice: 1, prio: 21, quota: 4, running: 0, on_rq: 0)
+[  161.668360] RSDL: -------------------------------------------------------------------------------
+[  161.668361] RSDL: = ACTIVE RQs
+[  161.668362] RSDL: = RQ  0 <quota: 14>
+[  161.668368] RSDL: =	-> (pid: 304, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668371] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668373] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668375] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668376] RSDL: -------------------------------------------------------------------------------
+[  161.668377] RSDL: = EXPIRED RQs
+[  161.668378] RSDL: ===============================================================================
+[  161.668380] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.668381] RSDL:             => picked task (pid: 304, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.668383] RSDL: ===============================================================================
+[  161.668384] RSDL: = RUNQUEUE <cpu: 0, nr_running: 4, current_list: 0>
+[  161.668385] RSDL: = CURRENT TASK: (pid: 303, nice: 1, prio: 21, quota: 4, running: 0, on_rq: 0)
+[  161.668407] RSDL: -------------------------------------------------------------------------------
+[  161.668408] RSDL: = ACTIVE RQs
+[  161.668409] RSDL: = RQ  0 <quota: 14>
+[  161.668410] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668412] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668413] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668415] RSDL: -------------------------------------------------------------------------------
+[  161.668416] RSDL: = EXPIRED RQs
+[  161.668417] RSDL: ===============================================================================
+[  161.668421] RSDL: HOOK CALLED => task_dead(pid: 303, nice: 1, prio: 21, quota: 4, running: 0, on_rq: 0)
+[  161.668714] RSDL: HOOK CALLED => dequeue_task(pid: 304, nice: -7, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.668718] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.668719] RSDL: ===============================================================================
+[  161.668720] RSDL: = RUNQUEUE <cpu: 0, nr_running: 4, current_list: 0>
+[  161.668721] RSDL: = CURRENT TASK: (pid: 304, nice: -7, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.668723] RSDL: -------------------------------------------------------------------------------
+[  161.668724] RSDL: = ACTIVE RQs
+[  161.668725] RSDL: = RQ  0 <quota: 14>
+[  161.668726] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668728] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668730] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668732] RSDL: -------------------------------------------------------------------------------
+[  161.668733] RSDL: = EXPIRED RQs
+[  161.668734] RSDL: ===============================================================================
+[  161.668735] RSDL: HOOK CALLED => smp_balance(pid: 304, nice: -7, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.668738] RSDL:             => Task prio changed
+[  161.668739] RSDL: HOOK CALLED => put_prev_task(pid: 304, nice: -7, prio: 13, quota: 5, running: 0, on_rq: 0)
+[  161.668741] RSDL:             => Flag set: TASK_DEAD
+[  161.668759] RSDL:             => Decrementing nr_running
+[  161.668760] RSDL: ===============================================================================
+[  161.668761] RSDL: = RUNQUEUE <cpu: 0, nr_running: 3, current_list: 0>
+[  161.668763] RSDL: = CURRENT TASK: (pid: 304, nice: -7, prio: 13, quota: 5, running: 0, on_rq: 0)
+[  161.668765] RSDL: -------------------------------------------------------------------------------
+[  161.668766] RSDL: = ACTIVE RQs
+[  161.668767] RSDL: = RQ  0 <quota: 14>
+[  161.668768] RSDL: =	-> (pid: 305, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668770] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668772] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668773] RSDL: -------------------------------------------------------------------------------
+[  161.668774] RSDL: = EXPIRED RQs
+[  161.668775] RSDL: ===============================================================================
+[  161.668779] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.668780] RSDL:             => picked task (pid: 305, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.668782] RSDL: ===============================================================================
+[  161.668783] RSDL: = RUNQUEUE <cpu: 0, nr_running: 3, current_list: 0>
+[  161.668784] RSDL: = CURRENT TASK: (pid: 304, nice: -7, prio: 13, quota: 5, running: 0, on_rq: 0)
+[  161.668786] RSDL: -------------------------------------------------------------------------------
+[  161.668801] RSDL: = ACTIVE RQs
+[  161.668802] RSDL: = RQ  0 <quota: 14>
+[  161.668803] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668805] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.668807] RSDL: -------------------------------------------------------------------------------
+[  161.668808] RSDL: = EXPIRED RQs
+[  161.668808] RSDL: ===============================================================================
+[  161.668811] RSDL: HOOK CALLED => task_dead(pid: 304, nice: -7, prio: 13, quota: 5, running: 0, on_rq: 0)
+[  161.669069] RSDL: HOOK CALLED => task_tick(pid: 305, nice: 5, prio: 0, quota: 5, running: 1, on_rq: 0)
+[  161.669452] RSDL: HOOK CALLED => dequeue_task(pid: 305, nice: 5, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.669456] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.669457] RSDL: ===============================================================================
+[  161.669458] RSDL: = RUNQUEUE <cpu: 0, nr_running: 3, current_list: 0>
+[  161.669460] RSDL: = CURRENT TASK: (pid: 305, nice: 5, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.669462] RSDL: -------------------------------------------------------------------------------
+[  161.669463] RSDL: = ACTIVE RQs
+[  161.669464] RSDL: = RQ  0 <quota: 13>
+[  161.669465] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.669467] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.669469] RSDL: -------------------------------------------------------------------------------
+[  161.669470] RSDL: = EXPIRED RQs
+[  161.669471] RSDL: ===============================================================================
+[  161.669472] RSDL: HOOK CALLED => smp_balance(pid: 305, nice: 5, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.669475] RSDL:             => Task prio changed
+[  161.669476] RSDL: HOOK CALLED => put_prev_task(pid: 305, nice: 5, prio: 25, quota: 4, running: 0, on_rq: 0)
+[  161.669478] RSDL:             => Flag set: TASK_DEAD
+[  161.669479] RSDL:             => Decrementing nr_running
+[  161.669480] RSDL: ===============================================================================
+[  161.669481] RSDL: = RUNQUEUE <cpu: 0, nr_running: 2, current_list: 0>
+[  161.669482] RSDL: = CURRENT TASK: (pid: 305, nice: 5, prio: 25, quota: 4, running: 0, on_rq: 0)
+[  161.669484] RSDL: -------------------------------------------------------------------------------
+[  161.669485] RSDL: = ACTIVE RQs
+[  161.669486] RSDL: = RQ  0 <quota: 13>
+[  161.669487] RSDL: =	-> (pid: 306, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.669489] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.669491] RSDL: -------------------------------------------------------------------------------
+[  161.669492] RSDL: = EXPIRED RQs
+[  161.669493] RSDL: ===============================================================================
+[  161.669494] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.669496] RSDL:             => picked task (pid: 306, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.669498] RSDL: ===============================================================================
+[  161.669499] RSDL: = RUNQUEUE <cpu: 0, nr_running: 2, current_list: 0>
+[  161.669500] RSDL: = CURRENT TASK: (pid: 305, nice: 5, prio: 25, quota: 4, running: 0, on_rq: 0)
+[  161.669502] RSDL: -------------------------------------------------------------------------------
+[  161.669503] RSDL: = ACTIVE RQs
+[  161.669504] RSDL: = RQ  0 <quota: 13>
+[  161.669523] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.669529] RSDL: -------------------------------------------------------------------------------
+[  161.669530] RSDL: = EXPIRED RQs
+[  161.669530] RSDL: ===============================================================================
+[  161.669533] RSDL: HOOK CALLED => task_dead(pid: 305, nice: 5, prio: 25, quota: 4, running: 0, on_rq: 0)
+[  161.669906] RSDL: HOOK CALLED => dequeue_task(pid: 306, nice: -5, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.669910] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.669911] RSDL: ===============================================================================
+[  161.669912] RSDL: = RUNQUEUE <cpu: 0, nr_running: 2, current_list: 0>
+[  161.669913] RSDL: = CURRENT TASK: (pid: 306, nice: -5, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.669915] RSDL: -------------------------------------------------------------------------------
+[  161.669916] RSDL: = ACTIVE RQs
+[  161.669917] RSDL: = RQ  0 <quota: 13>
+[  161.669918] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.669920] RSDL: -------------------------------------------------------------------------------
+[  161.669921] RSDL: = EXPIRED RQs
+[  161.669922] RSDL: ===============================================================================
+[  161.669923] RSDL: HOOK CALLED => smp_balance(pid: 306, nice: -5, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.669926] RSDL:             => Task prio changed
+[  161.669926] RSDL: HOOK CALLED => put_prev_task(pid: 306, nice: -5, prio: 15, quota: 5, running: 0, on_rq: 0)
+[  161.669929] RSDL:             => Flag set: TASK_DEAD
+[  161.669930] RSDL:             => Decrementing nr_running
+[  161.669931] RSDL: ===============================================================================
+[  161.669932] RSDL: = RUNQUEUE <cpu: 0, nr_running: 1, current_list: 0>
+[  161.669934] RSDL: = CURRENT TASK: (pid: 306, nice: -5, prio: 15, quota: 5, running: 0, on_rq: 0)
+[  161.669936] RSDL: -------------------------------------------------------------------------------
+[  161.669937] RSDL: = ACTIVE RQs
+[  161.669938] RSDL: = RQ  0 <quota: 13>
+[  161.669939] RSDL: =	-> (pid: 296, nice: -20, prio: 0, quota: 5, running: 1, on_rq: 1)
+[  161.669941] RSDL: -------------------------------------------------------------------------------
+[  161.669942] RSDL: = EXPIRED RQs
+[  161.669943] RSDL: ===============================================================================
+[  161.669944] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.669945] RSDL:             => picked task (pid: 296, priority: 0, quota: 5, running: 1, on_rq: 0)
+[  161.669947] RSDL: ===============================================================================
+[  161.669948] RSDL: = RUNQUEUE <cpu: 0, nr_running: 1, current_list: 0>
+[  161.669949] RSDL: = CURRENT TASK: (pid: 306, nice: -5, prio: 15, quota: 5, running: 0, on_rq: 0)
+[  161.669951] RSDL: -------------------------------------------------------------------------------
+[  161.669952] RSDL: = ACTIVE RQs
+[  161.669953] RSDL: -------------------------------------------------------------------------------
+[  161.669954] RSDL: = EXPIRED RQs
+[  161.669955] RSDL: ===============================================================================
+[  161.669958] RSDL: HOOK CALLED => task_dead(pid: 306, nice: -5, prio: 15, quota: 5, running: 0, on_rq: 0)
+[  161.669998] RSDL: HOOK CALLED => task_tick(pid: 296, nice: -20, prio: 0, quota: 5, running: 0, on_rq: 0)
+[  161.670089] RSDL: HOOK CALLED => dequeue_task(pid: 296, nice: -20, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.670093] RSDL:             => Flag set -> DEQUEUE_SLEEP.
+[  161.670094] RSDL: ===============================================================================
+[  161.670112] RSDL: = RUNQUEUE <cpu: 0, nr_running: 1, current_list: 0>
+[  161.670113] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.670115] RSDL: -------------------------------------------------------------------------------
+[  161.670116] RSDL: = ACTIVE RQs
+[  161.670117] RSDL: -------------------------------------------------------------------------------
+[  161.670118] RSDL: = EXPIRED RQs
+[  161.670119] RSDL: ===============================================================================
+[  161.670123] RSDL: HOOK CALLED => smp_balance(pid: 296, nice: -20, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.670126] RSDL: HOOK CALLED => put_prev_task(pid: 296, nice: -20, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.670128] RSDL:             => Flag set: TASK_DEAD
+[  161.670129] RSDL:             => Decrementing nr_running
+[  161.670130] RSDL: ===============================================================================
+[  161.670131] RSDL: = RUNQUEUE <cpu: 0, nr_running: 0, current_list: 0>
+[  161.670132] RSDL: = CURRENT TASK: (pid: 296, nice: -20, prio: 0, quota: 4, running: 0, on_rq: 0)
+[  161.670134] RSDL: -------------------------------------------------------------------------------
+[  161.670135] RSDL: = ACTIVE RQs
+[  161.670136] RSDL: -------------------------------------------------------------------------------
+[  161.670137] RSDL: = EXPIRED RQs
+[  161.670138] RSDL: ===============================================================================
+[  161.670139] RSDL: HOOK CALLED => pick_next_task(cpu: 0)
+[  161.670141] RSDL:             => No more tasks to run
+[  161.670142] RSDL:             => Restarting epoch
+[  161.670144] RSDL: HOOK CALLED => task_dead(pid: 296, nice: -20, prio: 0, quota: 4, running: 0, on_rq: 0)
